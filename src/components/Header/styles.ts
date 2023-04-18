@@ -19,7 +19,7 @@ export const HeaderContainer = styled.header`
         height: 2.375rem;
         border-radius: 6px;
         padding: 0.5rem;
-        background: var(--purple-light);
+        background: ${(props) => props.theme['brand-purple-light']};
         display: flex;
         align-items: center;
         gap: 0.25rem;
@@ -29,7 +29,7 @@ export const HeaderContainer = styled.header`
     .cart {
         height: 2.375rem;
         width: 2.375rem;
-        background: var(--yellow-light);
+        background: ${(props) => props.theme['brand-yellow-light']};
         border-radius: 6px;
         display: flex;
         align-items: center;

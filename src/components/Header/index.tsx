@@ -1,5 +1,6 @@
 import { HeaderContainer } from "./styles";
-import { MapPin, Money, ShoppingCart } from "@phosphor-icons/react";
+import { MapPin, ShoppingCart } from "@phosphor-icons/react";
+import { NavLink } from 'react-router-dom'
 
 export function Header() {
     return(
@@ -7,7 +8,7 @@ export function Header() {
             <nav className="header">
                 <a href="">
                     <img src="../../assets/Logo.svg" alt="" />
-                    LOGO
+                    <NavLink to="/">LOGO</NavLink>
                 </a>
                 <div className="actions">
                     <div className="location">
@@ -16,7 +17,9 @@ export function Header() {
                     </div>
                     
                     <div className="cart">
-                        <ShoppingCart size={24} color="#c47f17" weight="fill" />
+                        <a href="/checkout">
+                            <ShoppingCart size={24} color="#c47f17" weight="fill"/>
+                        </a>
                     </div>
                 </div>
             </nav>
