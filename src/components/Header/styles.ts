@@ -1,38 +1,49 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
-    .header {
+    width: 100%;
+    height: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 2rem 10rem;
     }
+`
 
-    .actions {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
+export const HeaderButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+`
 
-    .location {
-        max-width: 8.938rem;
-        height: 2.375rem;
-        border-radius: 6px;
-        padding: 0.5rem;
-        background: ${(props) => props.theme['brand-purple-light']};
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        font-size: 0.8em;
-    }
+interface HeaderButtonProps {
+    variant: "purple" | "yellow";
+}
 
-    .cart {
-        height: 2.375rem;
-        width: 2.375rem;
-        background: ${(props) => props.theme['brand-yellow-light']};
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+export const HeaderButton = styled.button<HeaderButtonProps>`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.3rem;
+    height: 2.3rem;
+    gap: 0.25rem;
+    border-radius: 6px;
+    padding: 0 0.5rem;
+    position: relative;
+    font-size:  ${({theme}) => theme.textSizes['text-regular-s']};
+
+    ${({variant, theme}) => css`
+        background: ${theme.colors[`brand-${variant}-light`]};
+        color: ${theme.colors[`brand-${variant}-dark`]};
+    `} 
+
+    ${({variant, theme}) => variant === 'purple' && css`
+        svg {
+            color: ${theme.colors['brand-purple']};
+        }
+    `} 
 `

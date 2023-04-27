@@ -8,8 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background: ${(props) => props.theme['base-background']};
-    color: ${(props) => props.theme['base-text']};
+    background:  ${({theme}) => theme.colors['base-background']};
+    color:  ${({theme}) => theme.colors['base-text']};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -29,6 +29,37 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  button, input {
+    border: none;
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    appearance: textfield;
+  }
+
+  @media (max-width: 768px) {
+    html  {
+      height: 100vh;
+      font-size: 70%;
+      margin: auto 10px;
+    }
+/* 
+    form {
+      width: 90%;
+    }
+
+    span {
+      font-size: 5rem;
+      line-height: 5rem;
+   } */
   }
 
 `
