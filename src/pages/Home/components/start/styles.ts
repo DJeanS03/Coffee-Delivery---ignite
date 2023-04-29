@@ -3,7 +3,7 @@ import startBackground from '../../../../assets/startBackground.svg'
 import { rgba } from 'polished'
 
 export const StartContainer = styled.section `
-    width: 100vw;
+    width: 100%;
     height: 34rem;
     background: ${({ theme }) => `url(${startBackground}) no-repeat center,
       linear-gradient(
@@ -27,6 +27,7 @@ export const StartContainer = styled.section `
         font-size: ${({theme}) => theme.textSizes['title-title-xl']};
         color: ${({theme}) => theme.colors['base-title']};
         font-family: 'Baloo 2';
+        font-weight: 700;
         line-height: 130%;
         margin-bottom: 1rem;
     }

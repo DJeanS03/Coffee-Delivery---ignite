@@ -26,7 +26,6 @@ export const IconWrapper = styled.button`
     height: 0.875rem;
     width: 0.875rem;
     background: none;
-    border: none;
     color: ${({ theme }) => theme.colors["brand-purple-dark"]};
     transition: .4s;
     line-height: 0;
@@ -39,4 +38,3 @@ export const IconWrapper = styled.button`
         color: ${({ theme }) => theme.colors["brand-purple-dark"]};
     }
 `
-1-22-21

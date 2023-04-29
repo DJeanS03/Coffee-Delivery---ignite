@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const LayoutContainer = styled.div`
     .container {
-        width: 100%;
-        max-width: 78rem;
-        margin-left: auto;
+        width: 100vw;
+        max-width: 70rem;
         margin-right: auto;
+        margin-left: auto;
     }
     
 `
