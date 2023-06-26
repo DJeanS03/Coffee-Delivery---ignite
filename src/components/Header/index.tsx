@@ -2,8 +2,11 @@ import { HeaderButton, HeaderButtonContainer, HeaderContainer } from "./styles";
 import coffeeLogo from "../../assets/Logo.svg";
 import { MapPin, ShoppingCart } from "@phosphor-icons/react";
 import { NavLink } from "react-router-dom";
+import { useGeolocation } from "../../Hooks/UseGeolocation";
 
 export function Header() {
+  const { location } = useGeolocation();
+
   return (
     <HeaderContainer>
       <nav className="container">
@@ -14,7 +17,7 @@ export function Header() {
         <HeaderButtonContainer>
           <HeaderButton variant="purple">
             <MapPin size={20} weight="fill" />
-            Porto Alegre, RS
+            {location ? location : "Definir Localização"}
           </HeaderButton>
 
           <NavLink to={"/checkout"}>
