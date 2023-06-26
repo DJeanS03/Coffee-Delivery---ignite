@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.0.8",
+    "@phosphor-icons/react": "^2.0.10",
     "@phosphor-icons/web": "^2.0.3",
     "polished": "^4.2.2",
     "react": "^18.2.0",

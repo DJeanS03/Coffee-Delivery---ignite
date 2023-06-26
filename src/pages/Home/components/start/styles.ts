@@ -1,69 +1,66 @@
 import styled, { css } from "styled-components";
-import startBackground from '../../../../assets/startBackground.svg'
-import { rgba } from 'polished'
+import startBackground from "../../../../assets/startBackground.svg";
+import { rgba } from "polished";
 
-export const StartContainer = styled.section `
-    width: 100%;
-    height: 34rem;
-    background: ${({ theme }) => `url(${startBackground}) no-repeat center,
+export const StartContainer = styled.section`
+  width: 100%;
+  height: 34rem;
+  background: ${({ theme }) => `url(${startBackground}) no-repeat center,
       linear-gradient(
         0deg,
         ${theme.colors["base-white"]} 0%,
         ${rgba(theme.colors["base-background"], 0.2)} 50%,
         ${theme.colors["base-background"]} 100%
       )`};
-    background-size: cover;
+  background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  .titles {
+    max-width: 36.75rem;
+  }
 
-    .titles {
-        max-width: 36.75rem;
-    }
+  .title {
+    font-size: ${({ theme }) => theme.textSizes["title-title-xl"]};
+    color: ${({ theme }) => theme.colors["base-title"]};
+    font-family: "Baloo 2";
+    font-weight: 700;
+    line-height: 130%;
+    margin-bottom: 1rem;
+  }
 
-    .title {
-        font-size: ${({theme}) => theme.textSizes['title-title-xl']};
-        color: ${({theme}) => theme.colors['base-title']};
-        font-family: 'Baloo 2';
-        font-weight: 700;
-        line-height: 130%;
-        margin-bottom: 1rem;
-    }
-
-    .subTitle {
-        font-size: ${({theme}) => theme.textSizes['text-regular-l']};
-        color: ${({theme}) => theme.colors['base-subtitle']};
-    }
-`
+  .subTitle {
+    font-size: ${({ theme }) => theme.textSizes["text-regular-l"]};
+    color: ${({ theme }) => theme.colors["base-subtitle"]};
+  }
+`;
 
 export const StartContent = styled.nav`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3.5rem;
-`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.5rem;
+`;
 
 export const ItemsContainer = styled.div`
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 1.25rem;
-    margin-top: 4.125rem;
-`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.25rem;
+  margin-top: 4.125rem;
+`;
 
 export const iconStyle = styled.div`
-    height: 2rem;
-    width: 2rem;
-    border-radius: 999px;
-        
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 999px;
 
-`
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 /* .titles {
         max-width: 36.75rem;

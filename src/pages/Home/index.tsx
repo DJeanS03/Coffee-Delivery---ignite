@@ -4,10 +4,10 @@ import { Start } from "./components/start";
 import { OurCoffees } from "./components/OurCoffees";
 
 export function Home() {
-    return(
-        <HeaderContainer>
-            <Start />
-            <OurCoffees />
-        </HeaderContainer>
-    )
+  return (
+    <HeaderContainer>
+      <Start />
+      <OurCoffees />
+    </HeaderContainer>
+  );
 }

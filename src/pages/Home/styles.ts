@@ -1,6 +1,5 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const HeaderContainer = styled.section`
-    margin-bottom: 9.8rem;
-`
-
+  margin-bottom: 9.8rem;
+`;
