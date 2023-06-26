@@ -1,5 +1,5 @@
 import { ItemsContainer, StartContainer, StartContent } from "./styles";
-import { Coffee, Package, ShoppingCart, Timer } from "@phosphor-icons/react";
+import { Package, ShoppingCart, Timer } from "@phosphor-icons/react";
 import coffeeImg from "../../../../assets/coffeeImg.svg";
 import { ItemsIcons } from "../../../../components/ItemsIcons";
 import { useTheme } from "styled-components";
