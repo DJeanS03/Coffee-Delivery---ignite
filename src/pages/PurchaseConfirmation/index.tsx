@@ -47,7 +47,7 @@ export function PurchaseConfirmation() {
           <ItemsIcons
             icon={<MapPin weight="fill" />}
             text={
-                <p>
+              <p>
                 Pagamento na Entrega
                 <br />
                 <strong>Cartão de Credito</strong>

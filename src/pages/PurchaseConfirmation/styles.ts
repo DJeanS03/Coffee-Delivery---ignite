@@ -5,6 +5,7 @@ export const PurchaseConfirmationContainer = styled.div`
   flex-direction: column;
   gap: 2.5rem;
   margin-top: 5rem;
+  margin-bottom: 10rem;
 
   .purchase__title {
     font-size: ${({ theme }) => theme.textSizes["title-title-l"]};

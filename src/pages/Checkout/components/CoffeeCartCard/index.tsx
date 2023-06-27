@@ -3,20 +3,45 @@ import {
   CoffeeCartCardContainer,
   RemoveButton,
 } from "./styles";
-import img from "../../../../../public/myCoffees/cremoso.png";
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { Trash } from "@phosphor-icons/react";
-export function CoffeeCartCard() {
+import { CartItem } from "../../../../context/cartContext";
+import { formatMoney } from "../../../../utils/formatMoney";
+import { useCart } from "../../../../Hooks/useCart";
+
+interface CoffeeCartCardProps {
+  coffee: CartItem;
+}
+
+export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
+  const { changeItemQuantityInCart, removeCartitems } = useCart();
+  function handleIncrease() {
+    changeItemQuantityInCart(coffee.id, "increase");
+  }
+  function handleDecrease() {
+    changeItemQuantityInCart(coffee.id, "decrease");
+  }
+  function handleRemove() {
+    removeCartitems(coffee.id);
+  }
+
+  const coffeeTotal = coffee.price * coffee.quantity;
+  const formattedPrice = formatMoney(coffeeTotal);
+
   return (
     <CoffeeCartCardContainer>
       <div className="coffeCard__container">
-        <img className="coffeCard__img" src={img} />
-
+        <img className="coffeCard__img" src={`/myCoffees/${coffee.photo}`} />
         <div>
-          <p className="coffeCard__title">Expresso Tradicional</p>
+          <p className="coffeCard__title">{coffee.name}</p>
           <ActionsContainer>
-            <QuantityInput size="small" />
-            <RemoveButton>
+            <QuantityInput
+              size="small"
+              quantity={coffee.quantity}
+              onIncrease={handleIncrease}
+              onDecrease={handleDecrease}
+            />
+            <RemoveButton onClick={handleRemove}>
               <Trash size={16} />
               REMOVER
             </RemoveButton>
@@ -24,7 +49,7 @@ export function CoffeeCartCard() {
         </div>
       </div>
 
-      <p className="coffeCard__price">R$ 9,90</p>
+      <p className="coffeCard__price">R$ {formattedPrice}</p>
     </CoffeeCartCardContainer>
   );
 }

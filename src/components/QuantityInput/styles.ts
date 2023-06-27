@@ -45,7 +45,7 @@ export const IconWrapper = styled.button`
   line-height: 0;
 
   &:disabled {
-    opacity: 0.4;
+    opacity: 0.2;
   }
 
   &:not(:disabled):hover {

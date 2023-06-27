@@ -3,9 +3,11 @@ import coffeeLogo from "../../assets/Logo.svg";
 import { MapPin, ShoppingCart } from "@phosphor-icons/react";
 import { NavLink } from "react-router-dom";
 import { useGeolocation } from "../../Hooks/UseGeolocation";
+import { useCart } from "../../Hooks/useCart";
 
 export function Header() {
   const { location } = useGeolocation();
+  const { cartQuantity } = useCart();
 
   return (
     <HeaderContainer>
@@ -23,6 +25,7 @@ export function Header() {
           <NavLink to={"/checkout"}>
             <HeaderButton variant="yellow">
               <ShoppingCart weight="fill" />
+              {cartQuantity >= 1 && <span>{cartQuantity}</span>}
             </HeaderButton>
           </NavLink>
         </HeaderButtonContainer>
