@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useAddressSearch } from "../../../../Hooks/useAddressSearch";
 import { Input } from "../../../../components/Input";
 import { AddressFormContainer } from "./styles";
+import { useAddressSearch } from "../../../../Hooks/UseAddressSearch";
 
 export function AddressForm() {
   const [cep, setCep] = useState("");
