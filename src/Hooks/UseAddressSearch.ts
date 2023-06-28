@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
 
 interface AddressData {
   street: string;
@@ -8,7 +8,10 @@ interface AddressData {
   state: string;
 }
 
-export const useAddressSearch = (): [AddressData | null, (cep: string) => void] => {
+export const useAddressSearch = (): [
+  AddressData | null,
+  (cep: string) => void
+] => {
   const [address, setAddress] = useState<AddressData | null>(null);
 
   const fetchAddress = async (cep: string) => {
@@ -23,7 +26,7 @@ export const useAddressSearch = (): [AddressData | null, (cep: string) => void] 
         state: uf,
       });
     } catch (error) {
-      console.error('Error while fetching address:', error);
+      console.error("Error while fetching address:", error);
       setAddress(null);
     }
   };
