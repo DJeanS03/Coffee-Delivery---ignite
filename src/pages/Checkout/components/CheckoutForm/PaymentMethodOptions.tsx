@@ -1,9 +1,9 @@
 import { Bank, CreditCard, Money } from "@phosphor-icons/react";
 import { PaymentMethodInput } from "../PaymentMethodInput";
 import { PaymentMethodOptionsContainer } from "./styles";
-import { useFormContext } from 'react-hook-form'
+import { useFormContext } from "react-hook-form";
 
-const paymentMethods = {
+export const paymentMethods = {
   credit_card: {
     label: "Cartão de Crédito",
     icon: <CreditCard size={16} />,
@@ -19,8 +19,12 @@ const paymentMethods = {
 };
 
 export function PaymentMethodOptions() {
-    const{ register, formState: { errors } } = useFormContext()
-    const paymentMethodsError = errors?.paymentMethod?.message as unknown as string
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+  const paymentMethodsError = errors?.paymentMethod
+    ?.message as unknown as string;
 
   return (
     <PaymentMethodOptionsContainer>

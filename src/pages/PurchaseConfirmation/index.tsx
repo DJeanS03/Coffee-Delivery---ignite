@@ -6,9 +6,29 @@ import { MapPin, Clock, CurrencyDollar } from "@phosphor-icons/react";
 import PurchaseConfirmationImg from "../../assets/PurchaseConfirmationImg.svg";
 import { ItemsIcons } from "../../components/ItemsIcons";
 import { useTheme } from "styled-components";
+import { useLocation, useNavigate } from "react-router-dom";
+import { OrderData } from "../Checkout";
+import { PaymentMethodInput } from "../Checkout/components/PaymentMethodInput";
+import { paymentMethods } from "../Checkout/components/CheckoutForm/PaymentMethodOptions";
+import { useEffect } from "react";
+
+interface LocationType {
+  state: OrderData;
+}
 
 export function PurchaseConfirmation() {
   const { colors } = useTheme();
+
+  const { state } = useLocation() as unknown as LocationType;
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!state) {
+      navigate("/");
+    }
+  }, []);
+
+  if(!state) return <></>
+
   return (
     <PurchaseConfirmationContainer className="container">
       <div>
@@ -24,9 +44,12 @@ export function PurchaseConfirmation() {
             icon={<MapPin weight="fill" />}
             text={
               <p>
-                Entrega em Rua <strong>João Daniel Martinelli, 102</strong>
+                Entrega em{" "}
+                <strong>
+                  {state.street} , {state.number}
+                </strong>
                 <br />
-                Farrapos - Porto Alegre, RS
+                {state.neighborhood} - {state.city}, {state.UF}
               </p>
             }
             iconColor={colors["brand-purple"]}
@@ -50,7 +73,7 @@ export function PurchaseConfirmation() {
               <p>
                 Pagamento na Entrega
                 <br />
-                <strong>Cartão de Credito</strong>
+                <strong>{paymentMethods[state.paymentMethod].label}</strong>
               </p>
             }
             iconColor={colors["brand-yellow-dark"]}
