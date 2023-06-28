@@ -28,7 +28,7 @@ export function ResumeSection() {
         <p className="resumeSection__total">R$ {formartCartTotal}</p>
       </div>
 
-      <button className="resumeSection__button" disabled={cartQuantity <= 0}>CONFIRMAR PEDIDO</button>
+      <button className="resumeSection__button" disabled={cartQuantity <= 0} type="submit">CONFIRMAR PEDIDO</button>
     </ResumeSectionContainer>
   );
 }
