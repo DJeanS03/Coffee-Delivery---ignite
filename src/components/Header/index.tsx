@@ -2,7 +2,7 @@ import { HeaderButton, HeaderButtonContainer, HeaderContainer } from "./styles";
 import coffeeLogo from "../../assets/Logo.svg";
 import { MapPin, ShoppingCart } from "@phosphor-icons/react";
 import { NavLink } from "react-router-dom";
-import { useGeolocation } from "../../Hooks/UseGeolocation";
+import { useGeolocation } from "../../Hooks/useGeolocation";
 import { useCart } from "../../Hooks/useCart";
 
 export function Header() {
