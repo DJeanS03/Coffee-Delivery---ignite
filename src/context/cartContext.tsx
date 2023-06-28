@@ -8,9 +8,9 @@ export interface CartItem extends Coffees {
 
 interface CartContextType {
   cartItems: CartItem[];
-  addCoffeesToCart: (coffee: CartItem) => void;
   cartQuantity: number;
   cartItemsTotal: number;
+  addCoffeesToCart: (coffee: CartItem) => void;
   changeItemQuantityInCart: (
     cartItemId: number,
     type: "increase" | "decrease"
@@ -34,7 +34,9 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     }
     return [];
   });
+
   const cartQuantity = cartItems.length;
+
   const cartItemsTotal = cartItems.reduce((total, cartItem) => {
     return total + cartItem.price * cartItem.quantity;
   }, 0);
@@ -71,6 +73,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
           type === "increase" ? item.quantity + 1 : item.quantity - 1;
       }
     });
+    event?.preventDefault();
     setCartItems(newCart);
   }
 

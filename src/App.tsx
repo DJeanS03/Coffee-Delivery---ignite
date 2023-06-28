@@ -8,8 +8,8 @@ import { CartContextProvider } from "./context/cartContext";
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
       <BrowserRouter>
-        <GlobalStyle />
         <CartContextProvider>
           <Router />
         </CartContextProvider>

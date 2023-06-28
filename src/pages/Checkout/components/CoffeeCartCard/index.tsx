@@ -15,6 +15,7 @@ interface CoffeeCartCardProps {
 
 export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
   const { changeItemQuantityInCart, removeCartitems } = useCart();
+  
   function handleIncrease() {
     changeItemQuantityInCart(coffee.id, "increase");
   }
@@ -36,10 +37,10 @@ export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
           <p className="coffeCard__title">{coffee.name}</p>
           <ActionsContainer>
             <QuantityInput
-              size="small"
-              quantity={coffee.quantity}
               onIncrease={handleIncrease}
               onDecrease={handleDecrease}
+              quantity={coffee.quantity}
+              size="small"
             />
             <RemoveButton onClick={handleRemove}>
               <Trash size={16} />
