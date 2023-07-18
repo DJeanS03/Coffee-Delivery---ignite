@@ -15,6 +15,8 @@ interface ErrorsType {
 export function AddressForm() {
   const [cep, setCep] = useState("");
   const [address, fetchAddress] = useAddressSearch();
+  const { register, formState, setValue } = useFormContext();
+  const { errors } = formState as unknown as ErrorsType;
 
   const handleCepChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let formattedCep = event.target.value.replace(/\D/g, ""); // Removes all non-numeric characters
@@ -24,6 +26,7 @@ export function AddressForm() {
     }
 
     setCep(formattedCep);
+    setValue("cep", formattedCep); // Atualiza o valor do input manualmente
   };
 
   useEffect(() => {
@@ -34,27 +37,29 @@ export function AddressForm() {
     }
   }, [cep, fetchAddress]);
 
-  //====================================================FORM VALIDATION=============================================================================
-  const { register, formState } = useFormContext();
-  const { errors } = formState as unknown as ErrorsType;
+  useEffect(() => {
+    setValue("cep", cep);
+    setValue("street", address?.street || "");
+    setValue("neighborhood", address?.neighborhood || "");
+    setValue("city", address?.city || "");
+    setValue("UF", address?.state || "");
+  }, [setValue, address]);
+
 
   return (
     <AddressFormContainer>
       <Input
         placeholder="CEP*"
         className="cep"
-        /* onChange={handleCepChange}
+        onChange={handleCepChange}
         pattern="\d{5}-?\d{3}"
         value={cep}
-        maxLength={9} */
-        {...register("cep")}
+        maxLength={9}
         error={errors.cep?.message}
       />
       <Input
         placeholder="Rua*"
         className="street"
-        value={address?.street}
-        maxLength={8}
         {...register("street")}
         error={errors.street?.message}
       />
@@ -71,20 +76,18 @@ export function AddressForm() {
       />
       <Input
         placeholder="Bairro*"
-        value={address?.neighborhood}
         {...register("neighborhood")}
         error={errors.neighborhood?.message}
       />
       <Input
         placeholder="Cidade*"
-        value={address?.city}
         {...register("city")}
         error={errors.city?.message}
       />
       <Input
         placeholder="UF*"
-        value={address?.state}
         {...register("UF")}
+        maxLength={2}
         error={errors.UF?.message}
       />
     </AddressFormContainer>

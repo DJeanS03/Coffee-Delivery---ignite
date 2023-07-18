@@ -19,7 +19,7 @@ export function Header() {
         <HeaderButtonContainer>
           <HeaderButton variant="purple">
             <MapPin size={20} weight="fill" />
-            {/* {location ? location : "Definir Localização"} */}
+            {location ? location : "Definir Localização"}
           </HeaderButton>
 
           <NavLink to={"/checkout"}>

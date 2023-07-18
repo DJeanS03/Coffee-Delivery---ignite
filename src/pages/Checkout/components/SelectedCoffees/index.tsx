@@ -11,9 +11,8 @@ export function SelectedCoffees() {
 
       <DetailsContainer>
         {cartItems.map((item) => (
-          <CoffeeCartCard key={item.id} coffee={item}/>
+          <CoffeeCartCard key={item.id} coffee={item} />
         ))}
-
         <ResumeSection />
       </DetailsContainer>
     </SelectedCoffeesContainer>

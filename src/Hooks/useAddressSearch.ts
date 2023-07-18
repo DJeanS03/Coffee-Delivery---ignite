@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 interface AddressData {
+  zip: string
   street: string;
   neighborhood: string;
   city: string;
@@ -20,6 +21,7 @@ export const useAddressSearch = (): [
       const { logradouro, bairro, localidade, uf } = response.data;
 
       setAddress({
+        zip: cep,
         street: logradouro,
         neighborhood: bairro,
         city: localidade,
