@@ -6,6 +6,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+/*   ::selection {
+    background-color: #8e44ad; 
+  color: #ffffff; 
+} */
   
   body {
     background:  ${({ theme }) => theme.colors["base-background"]};
@@ -47,9 +52,8 @@ export const GlobalStyle = createGlobalStyle`
 
   @media (max-width: 768px) {
     html  {
-      height: 100vh;
+     /*  height: 100vh; */
       font-size: 70%;
-      margin: auto 10px;
     }
 /* 
     form {

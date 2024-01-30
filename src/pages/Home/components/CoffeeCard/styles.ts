@@ -19,6 +19,10 @@ export const CoffeeCardContainer = styled.nav`
     width: 7.5rem;
     margin-top: -1.25rem;
   }
+
+  @media (max-width: 400px) {
+    max-width: 14rem;
+  }
 `;
 
 export const Tags = styled.div`
@@ -66,12 +70,12 @@ export const CardFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 23px;
+  gap: 1.5rem;
 
   > div {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 0.188rem;
   }
 
   .symbol {
@@ -83,6 +87,10 @@ export const CardFooter = styled.div`
     font-weight: 700;
     font-family: "Baloo 2";
     line-height: 0.75rem;
+  }
+
+  @media (max-width: 400px) {
+    gap: 0.75rem;
   }
 `;
 

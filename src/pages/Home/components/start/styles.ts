@@ -5,6 +5,7 @@ import { rgba } from "polished";
 export const StartContainer = styled.section`
   width: 100%;
   height: 34rem;
+  padding: 0 1.5rem;
   background: ${({ theme }) => `url(${startBackground}) no-repeat center,
       linear-gradient(
         0deg,
@@ -35,13 +36,29 @@ export const StartContainer = styled.section`
     font-size: ${({ theme }) => theme.textSizes["text-regular-l"]};
     color: ${({ theme }) => theme.colors["base-subtitle"]};
   }
+
+  @media (max-width: 535px) {
+    height: 100vh;
+  }
 `;
 
 export const StartContent = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3.5rem;
+  gap: 3rem;
+
+  img {
+    max-width: 50%;
+  }
+
+  @media (max-width: 535px) {
+    flex-direction: column-reverse;
+
+    img {
+      max-width: 60%;
+    }
+  }
 `;
 
 export const ItemsContainer = styled.div`
@@ -50,6 +67,7 @@ export const ItemsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
   margin-top: 4.125rem;
+  gap: 0.5rem;
 `;
 
 export const iconStyle = styled.div`
@@ -61,63 +79,3 @@ export const iconStyle = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
-/* .titles {
-        max-width: 36.75rem;
-        margin-bottom: 4.25rem;
-    }
-
-    .title {
-        font-family: 'Baloo 2';
-        font-size: 3rem;
-        line-height: 130%;
-        color: ${({theme}) => theme.colors['base-title']};
-        margin-bottom: 16px;
-    }
-
-    .subTitle {
-        font-size: 1.25rem;
-        line-height: 130%;
-        color: ${({theme}) => theme.colors['base-title']};
-    }
-
-    .icon {
-        font-size: 16px;
-        color: ${({theme}) => theme.colors['base-white']};
-
-        
-    }
-
-    .boxIcons {
-        height: 2rem;
-        width: 2rem;
-        border-radius: 999px;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .yellowD {
-        background: ${({theme}) => theme.colors['brand-yellow-dark']};
-    }
-
-    .yellow {
-        background: ${({theme}) => theme.colors['brand-yellow']};
-    }
-
-    .baseT {
-        background: ${({theme}) => theme.colors['base-text']};
-    }
-
-    .purple {
-        background: ${({theme}) => theme.colors['brand-purple']};
-    }
-
-    .descriptionBox {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 1.25rem;
-    } */

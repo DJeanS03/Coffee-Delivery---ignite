@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.colors["base-background"]};
+  padding: 0 1rem;
 
   position: sticky;
   top: 0;
@@ -47,8 +48,8 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 50%;
-    top: calc(-1.25rem / 2 );
-    right: calc(-1.25rem / 2 );
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
     color: ${({ theme }) => theme.colors["base-white"]};
     background: ${({ theme }) => theme.colors["brand-yellow-dark"]};
     display: flex;

@@ -1,6 +1,17 @@
 export const defaultTheme = {
   colors: {
-        "base-white": "#FFFFFF",
+    "base-white": "#121212",
+    "base-background": "#1E1E1E",
+    "base-card": "#2B2B2B",
+    "base-input": "#333333",
+    "base-button": "#404040",
+    "base-hover": "#555555",
+    "base-label": "#B8B8B8",
+    "base-text": "#E0E0E0",
+    "base-subtitle": "#C2C2C2",
+    "base-title": "#F5F5F5",
+
+   /*  "base-white": "#FFFFFF",
     "base-background": "#FAFAFA",
     "base-card": "#F3F2F2",
     "base-input": "#EDEDED",
@@ -9,7 +20,7 @@ export const defaultTheme = {
     "base-label": "#8D8686",
     "base-text": "#574F4D",
     "base-subtitle": "#403937",
-    "base-title": "#272221",
+    "base-title": "#272221", */
 
     /* "base-white": "#1F1F1F",
     "base-background": "#1C1C1C",
