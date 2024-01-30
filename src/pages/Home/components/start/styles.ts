@@ -37,7 +37,7 @@ export const StartContainer = styled.section`
     color: ${({ theme }) => theme.colors["base-subtitle"]};
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 535px) {
     height: 100vh;
   }
 `;
@@ -52,7 +52,7 @@ export const StartContent = styled.nav`
     max-width: 50%;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 535px) {
     flex-direction: column-reverse;
 
     img {
