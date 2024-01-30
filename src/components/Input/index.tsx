@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, forwardRef } from "react";
 import { InputStyleContainer, InputStyled, InputWrapper } from "./styles";
+import React from "react";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string;
