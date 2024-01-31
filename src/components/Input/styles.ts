@@ -42,6 +42,10 @@ export const InputStyleContainer = styled.div<InputStyleContainerProps>`
     margin-right: 0.75rem;
     font-style: italic;
     color: ${({ theme }) => theme.colors["base-label"]};
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 `;
 

@@ -12,6 +12,11 @@ export const CheckoutFormContainer = styled.div`
     font-size: ${({ theme }) => theme.textSizes["title-title-xs"]};
     font-family: "Baloo 2";
   }
+
+  @media (max-width: 425px) {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 `;
 
 export const FormSectionContainer = styled(SectionBaseStyle)`
@@ -39,6 +44,18 @@ export const AddressFormContainer = styled.div`
 
   .complement {
     grid-column: span 2;
+  }
+
+  @media (max-width: 425px) {
+    grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+
+    .cep {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 425px) {
+    grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
   }
 `;
 
