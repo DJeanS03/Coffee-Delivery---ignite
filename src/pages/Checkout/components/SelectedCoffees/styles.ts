@@ -12,6 +12,10 @@ export const SelectedCoffeesContainer = styled.div`
     font-size: ${({ theme }) => theme.textSizes["title-title-xs"]};
     font-family: "Baloo 2";
   }
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
 `;
 
 export const DetailsContainer = styled(SectionBaseStyle)`

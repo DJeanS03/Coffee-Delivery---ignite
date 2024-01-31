@@ -22,17 +22,6 @@ export const defaultTheme = {
     "base-subtitle": "#403937",
     "base-title": "#272221",
 
-    /* "base-white": "#1F1F1F",
-    "base-background": "#1C1C1C",
-    "base-card": "#222121",
-    "base-input": "#2B2A2A",
-    "base-button": "#313030",
-    "base-hover": "#474545",
-    "base-label": "#A8A1A1",
-    "base-text": "#CBC4C4",
-    "base-subtitle": "#D6D0D0",
-    "base-title": "#E9E5E5", */
-
     "base-error": "#f84747",
     "brand-purple-dark": "#4B2995",
     "brand-purple": "#8047F8",

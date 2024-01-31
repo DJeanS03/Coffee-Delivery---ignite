@@ -29,9 +29,10 @@ export const ContentContainer = styled.div`
   font-size: 0.75rem;
   text-transform: uppercase;
   border-radius: 6px;
-  height: 3rem;
+  min-height: 100%;
   border: 1px solid ${({ theme }) => theme.colors["base-button"]};
   transition: 0.4s;
+
 
   svg {
     color: ${({ theme }) => theme.colors["brand-purple"]};
@@ -42,4 +43,9 @@ export const ContentContainer = styled.div`
   }
 
   user-select: none;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
